@@ -1,10 +1,22 @@
-<h3> Netflix Data </h3>
+<h3> Netflix Data (Kaggle dataset of TV Shows and Movies available on Netflix as of 2019) </h3>
 <p>
-  <b>Data : </b>
-  <%=raw @netflix_dt.data %>
+  <font face = "Monospace" size = "5"><font color = "#008B8B">netflix_df</font> = <font color = "008B8B">Daru::DataFrame</font>.<b><font color = "8B0000">from_csv</font></b>(
+    <font color="#FA8072"><br>&emsp;"netflix_titles_nov_2019.csv"</font>
+    <br>)
   <br>
-  <b>Table : </b>
+  <font color = "#008B8B">netflix_options</font> = 
+  <br>{
+  <br>&emsp;<font color = "#800080">adapter:</font> <font color="#FA8072">:datatables</font>,
+  <br>&emsp;<font color = "#800080">html_options:</font> {
+  <br>&emsp;&emsp;<font color = "#800080">table_options:</font> {
+  <br>&emsp;&emsp;&emsp;<font color = "#800080">width:</font> <font color="#FA8072">"100%"</font>
+  <br>&emsp;&emsp;}
+  <br>&emsp;}
+  <br>}
   <br>
+  <font color = "#008B8B">netflix_dt</font> =
+    <font color = "#008B8B">Daru::View::Table</font>.<b><font color = "8B0000">new</font></b>(<font color="#FA8072">netflix_df</font>, <font color="#FA8072">netflix_options</font>)
+  <br> </font>
   <div style="width: 500px;"><%=raw @netflix_dt.div %></div>
 </p>
 <br>
